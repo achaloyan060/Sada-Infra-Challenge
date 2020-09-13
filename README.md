@@ -10,6 +10,9 @@ At the root directory, this project contains a README.md file, a CMakeLists.txt 
 ## Source
 This directory contains all the source files necessary to run the project: challenge2.cpp and md5.cpp. The challenge2.cpp file contains the main program that produces the necessary outputs and the md5.cpp file is a helper file that calculates hash digests of files.
 
+## Include
+This directory contains the header file md5.h.
+
 ## Data
 This directory contains the "loomings.txt" file that the program uses to read. 
 
