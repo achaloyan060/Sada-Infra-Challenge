@@ -24,9 +24,9 @@ pair<int, int> findIdenticalHashDigests(vector<pair<string, string>> vect)
 //creates a new file identical to original file (loomings.txt) but omits the duplicate line
 void makeCleanFile(string omit_str)
 {
-    ifstream file("../data/loomings.txt");
+    ifstream file("data/loomings.txt");
     string str;
-    ofstream cleanFile("../output/loomings-clean.txt");
+    ofstream cleanFile("output/loomings-clean.txt");
     bool found = false;
     int skip_line = 1;
     
@@ -57,7 +57,7 @@ void makeCleanFile(string omit_str)
 
 void readFile()
 {
-    ifstream file("../data/loomings.txt");
+    ifstream file("data/loomings.txt");
     string str;
     int index = 1;
     vector<pair<int, string>> files_with_sizes;
@@ -69,7 +69,7 @@ void readFile()
         {
             //create file containing each none-blank line
             string name = "file-" + to_string(index);
-            ofstream outfile("../output/"+name);
+            ofstream outfile("output/"+name);
             outfile << str;
             outfile.close();
             index++;
@@ -81,7 +81,7 @@ void readFile()
             content[str.length()] = 0;
             hasher.add(content, str.length());
             string digest = hasher.getHash();
-            ofstream outfileHash("../output/"+name+".hash");
+            ofstream outfileHash("output/"+name+".hash");
             outfileHash << digest;
             outfileHash.close();
 
@@ -104,20 +104,21 @@ void readFile()
     }
 
     //print file with identical content
-    std::pair<int, int> identical_files = findIdenticalHashDigests(files_with_hashes);
-    ifstream ifs(files_with_hashes[identical_files.first].second);
+    pair<int, int> identical_files = findIdenticalHashDigests(files_with_hashes);
+    ifstream ifs("output/"+files_with_hashes[identical_files.first].second);
     string file_content((istreambuf_iterator<char>(ifs)),
                    (istreambuf_iterator<char>()));
     cout << files_with_hashes[identical_files.first].second << " and "
         << files_with_hashes[identical_files.second].second << " have identical content."
-        << endl << "Original duplicated text: " << file_content << endl;
+        << endl << "Original duplicated text: \n" << file_content << endl;
 
     //make the clean file
     makeCleanFile(file_content);
 
 }
 
-void main(int argc, char** argv) 
+int main(int argc, char** argv) 
 {
     readFile();
+    return 0;
 }
