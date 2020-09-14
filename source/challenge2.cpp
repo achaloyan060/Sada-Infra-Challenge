@@ -76,10 +76,7 @@ void readFile()
 
             //create file with hash digest
             MD5 hasher;
-            unsigned char* content = new unsigned char[str.length()];
-            copy(str.begin(), str.end(), content);
-            content[str.length()] = 0;
-            hasher.add(content, str.length());
+            hasher.add(str.data(), str.length());
             string digest = hasher.getHash();
             ofstream outfileHash("output/"+name+".hash");
             outfileHash << digest;
