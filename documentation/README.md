@@ -5,7 +5,10 @@ This project reads an input file called "loomings.txt" and creates files that co
 This project is executed by the run.sh script in the root directory and it is built with cmake. All cmake generated files are stored in the build directory. The project uses an input file from the data directory and stores the resulting output files in the output directory. 
 
 # How to build and run the project
-To build and run this project, execute the run.sh script in the root directory. The prerequisites for this project include installation of gcc and cmake.
+To build and run this project, execute the run.sh script in the root directory.
+Prerequisites:
+- gcc
+- CMake.
 
 # Design
 This project uses an md5 algorithm to compose hash digests for the files. The files used in this project were downloaded from https://create.stephan-brumme.com/hash-library/
