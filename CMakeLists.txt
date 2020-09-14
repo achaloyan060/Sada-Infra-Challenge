@@ -2,11 +2,9 @@ cmake_minimum_required(VERSION 3.5.1)
 
 project(SADA_Infra C CXX)
 
-#if(NOT MSVC)
-#  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-#else()
-#  add_definitions(-D_WIN32_WINNT=0x600)
-#endif()
+if(NOT MSVC)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+endif()
 
 # Include directories
 include_directories(include)
