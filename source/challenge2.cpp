@@ -9,7 +9,7 @@
 using namespace std;
 
 //finds two files with identical content and returns their indices as a pair of integers
-pair<int, int> findIdenticalHashDigests(vector<pair<string, string>> vect)
+pair<int, int> findIdenticalHashDigests(vector< pair<string, string> > vect)
 {
     for (int i = 0; i < vect.size(); i++)
     {
@@ -60,8 +60,8 @@ void readFile()
     ifstream file("data/loomings.txt");
     string str;
     int index = 1;
-    vector<pair<int, string>> files_with_sizes;
-    vector<pair<string, string>> files_with_hashes;
+    vector< pair<int, string> > files_with_sizes;
+    vector< pair<string, string> > files_with_hashes;
 
     while (getline(file, str)) 
     {
