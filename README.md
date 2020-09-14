@@ -1,5 +1,5 @@
 # Summary 
-This project is a solution to SADA's infra challenge #2 (read file and create files and sort). 
+This project is a solution to SADA's infra challenge #2 (read file and create files and sort).  
 The project performs the following:
 - reads a file called "loomings.txt" and creates files with each non-blank line
 - sorts the files in order of increasing size 
